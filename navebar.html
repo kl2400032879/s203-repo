@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+    <style>
+        .navbar{
+            background-color:beige;
+          display: flex;
+          justify-content: space-between;
+          padding: 0px;
+          margin: 0px;
+        }
+        .navbar li{
+            color: pink;
+            list-style-type: none;
+            float: left;
+            padding: 10px;
+            cursor: pointer;
+            
+        }
+        .navbar ul{
+            display: flex;
+            padding: 0px;
+        }
+        .navbar li:hover{
+            background-color: gray;
+         
+        }
+        .form-container{
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="navbar">
+    <ul >
+        <li>Home</li>
+        <li>Contact us</li>
+        <li>About</li>
+       
+    </ul>
+    <ul>
+         <li onclick="showform('signupForm')">signup</li>
+        <li onclick="showform('loginForm')">Login/Sign-in</li>
+    </ul>
+    </div>
+    <!--signup-->
+   <div id="signupForm" class="form-container">
+ <h2>Signup form</h2>
+ <input type="text" placeholder="Enter user name">
+ <input type="password" placeholder="Enter password">
+ <input type="email" placeholder="Enter email">
+ <button>Signup</button>
+   </div>
+   <!--login form-->
+   <div  id="loginForm" class="form-container">
+    <h2>Login form</h2>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Enter password">
+    <button>login</button>
+   </div>
+   <!--defining javascript function-->
+   <script>
+    function showform(formId){
+        //hide all the opened forms
+        document.querySelectorAll('.form-container').forEach(
+            form => { form.style.display = 'none' }
+        );
+        //open specified form
+        document.getElementById(formId).style.display = 'block';
+    }
+   </script>
+</body>
+</html>
